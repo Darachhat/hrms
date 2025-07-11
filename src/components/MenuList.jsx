@@ -16,9 +16,9 @@ import {
 
 const MenuList = ({darkTheme}) => {
   return (
-    <Menu theme={darkTheme ? 'dark' : 'light'}  mode='vertical' defaultSelectedKeys={['dashboard']} className='menu-bar'>
+    <Menu  theme={darkTheme ? 'light' : 'dark'}  mode='inline' defaultSelectedKeys={['dashboard']} className='menu-bar'>
       <Menu.Item key="dashboard" icon={<HomeOutlined />}>
-        Dashboar
+        Dashboard
       </Menu.Item>
 
       <Menu.SubMenu key="setup" icon={<AppstoreAddOutlined />} title="Setup">

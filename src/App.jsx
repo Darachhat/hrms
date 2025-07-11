@@ -18,8 +18,8 @@ const App = () => {
   const {token: {colorBgContainer}} = theme.useToken();
 
   return (
-    <Layout>
-       <Sider collapsed={collapsed} collapsible trigger={null} theme={darkTheme ? 'dark' : 'light'} className='sidebar'>
+    <Layout >
+       <Sider  collapsed={collapsed} collapsible trigger={null} theme={darkTheme ? 'dark' : 'light'} className='sidebar'>
           <Logo/>
           <MenuList darkTheme={darkTheme}/>
           <ToggleThemeButton darkTheme={darkTheme} toggleTheme={toggleTheme}/>
@@ -29,20 +29,13 @@ const App = () => {
           className='toggle' style={{padding: 0, background: colorBgContainer}}>
             <Button type='text' icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined /> } />
           </Header>
-          <Breadcrumb
-            items={[{ title: 'Dashboard' }]}
-            style={{ margin: '16px 16px 0' }}
-          />
-          <Content
-            style={{
-              padding: 24,
-              margin: 0,
-              minHeight: 280,
-              background: colorBgContainer,
-              
-            }}
-          >
-            Content
+          <Content style={{margin: '0 16px'}}>
+            <Breadcrumb style={{margin: '16px 0'}}>
+              <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
+            </Breadcrumb>
+            <div className='site-layout-content' style={{padding: 24, minHeight: 360, background: colorBgContainer}}>
+              Content goes here
+            </div>
           </Content>
        </Layout>
     </Layout>
